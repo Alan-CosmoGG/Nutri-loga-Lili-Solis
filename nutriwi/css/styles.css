@@ -1,0 +1,319 @@
+/* --- Variables y Estilos Globales --- */
+:root {
+    --primary-color: #4CAF50; /* Verde saludable */
+    --secondary-color: #333;
+    --light-gray: #f4f4f4;
+    --white-color: #fff;
+    --font-family: 'Montserrat', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-family);
+    line-height: 1.6;
+    color: var(--secondary-color);
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+    overflow: hidden;
+    padding: 0 20px;
+}
+
+section {
+    padding: 60px 0;
+}
+
+h1, h2, h3 {
+    margin-bottom: 20px;
+}
+
+h2 {
+    text-align: center;
+    font-size: 2.5rem;
+}
+
+/* --- Header y Navegación --- */
+header {
+    background: var(--white-color);
+    color: var(--secondary-color);
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1100px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+nav .logo a {
+    font-weight: 700;
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    padding: 0 1rem;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--secondary-color);
+    font-weight: 700;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: var(--primary-color);
+}
+
+/* --- Sección Hero (Inicio) --- */
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://source.unsplash.com/1600x900/?healthy,food') no-repeat center center/cover;
+    height: 90vh; /* AJUSTADO PARA PC */
+    color: var(--white-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero-text h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero-text p {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+}
+
+.cta-button {
+    background: var(--primary-color);
+    color: var(--white-color);
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 700;
+    transition: background 0.3s ease;
+}
+
+.cta-button:hover {
+    background: #45a049;
+}
+
+
+/* --- Sección Sobre Mí --- */
+#sobre-mi .container {
+    text-align: center;
+}
+
+.sobre-mi-content {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    margin-top: 40px;
+    text-align: left;
+}
+
+.sobre-mi-texto {
+    flex: 1;
+}
+
+.sobre-mi-imagen {
+    flex: 0 0 300px;
+}
+
+.sobre-mi-imagen img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    border: 5px solid var(--white-color);
+}
+
+/* --- Sección Servicios --- */
+#servicios {
+    background: var(--light-gray);
+}
+
+.servicios-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.servicio-item {
+    background: var(--white-color);
+    padding: 30px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* --- Ubicación --- */
+.map-container {
+    margin-top: 20px;
+    border: 5px solid var(--light-gray);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+#ubicacion p {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* --- Contacto --- */
+#contacto {
+    background: var(--light-gray);
+    padding: 60px 20px;
+    text-align: center;
+}
+
+#contacto h2 {
+    margin-bottom: 40px;
+    font-size: 2.5rem;
+}
+
+.contacto-iconos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+
+.contacto-iconos a {
+    text-decoration: none;
+    color:#45a049;
+}
+
+.contacto-iconos .fab {
+    font-size: 3rem;
+    transition: transform 0.2s ease-in-out;
+}
+
+.contacto-iconos .fab:hover {
+    transform: scale(1.15);
+}
+
+/* --- Footer --- */
+footer {
+    background: var(--secondary-color);
+    color: #a0a0a0;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+
+/* ==========================================================================
+   ESTILOS RESPONSIVOS
+   ========================================================================== */
+
+/* Oculta el icono de hamburguesa en escritorio por defecto */
+.menu-toggle {
+    display: none;
+}
+
+@media (max-width: 768px) {
+
+    /* --- Ajustes Generales --- */
+    h1, h2 {
+        font-size: 2rem; /* Reduce el tamaño de los títulos principales */
+    }
+
+    /* --- Header y Navegación Móvil --- */
+    nav {
+        justify-content: space-between;
+    }
+
+    .menu-toggle {
+        display: block; /* Muestra el icono de hamburguesa */
+        font-size: 1.8rem;
+        cursor: pointer;
+        color: var(--secondary-color);
+    }
+
+    nav ul {
+        display: none; /* Oculta el menú por defecto */
+        flex-direction: column;
+        position: absolute;
+        top: 70px; /* Altura aproximada del header */
+        left: 0;
+        width: 100%;
+        background: var(--white-color);
+        box-shadow: 0 4px 5px rgba(0,0,0,0.1);
+    }
+
+    nav ul.active {
+        display: flex; /* Muestra el menú cuando se hace clic */
+    }
+
+    nav ul li {
+        text-align: center;
+        padding: 1rem 0;
+        border-bottom: 1px solid var(--light-gray);
+    }
+
+    /* --- Sección Hero --- */
+    .hero {
+        height: 70vh; /* AJUSTADO PARA MÓVIL */
+    }
+    .hero-text {
+        width: 90%; /* Limita el ancho del texto para mejor legibilidad */
+    }
+    .hero-text h1 {
+        font-size: 2.5rem; /* Reduce el tamaño del título principal */
+    }
+    .hero-text p {
+        font-size: 1rem;
+    }
+
+    /* --- Sección Sobre Mí --- */
+    #sobre-mi {
+        padding: 40px 20px;
+    }
+
+    .sobre-mi-imagen {
+        display: none; /* Oculta la imagen en móviles */
+    }
+
+    .sobre-mi-content {
+        text-align: center; /* Centra el texto que queda */
+        margin-top: 20px;
+    }
+
+    /* --- Sección Servicios --- */
+    /* Nota: La sección de servicios ya era responsiva gracias a CSS Grid. ¡No necesita cambios! */
+
+    /* --- Contacto --- */
+    .contacto-iconos {
+        gap: 30px; /* Reduce el espacio entre iconos en pantallas pequeñas */
+    }
+    .contacto-iconos .fab {
+        font-size: 2.5rem; /* Reduce ligeramente el tamaño de los iconos */
+    }
+}
